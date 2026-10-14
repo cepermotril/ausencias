@@ -1,0 +1,10 @@
+﻿__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+bajas_antiguo.json
+app_backup.py
+credenciales.txt
+backups/
+*.bak

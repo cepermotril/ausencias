@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso - Parte de Bajas</title>
+  <style>
+    body{font-family:Arial;background:#f0f4f8;display:flex;justify-content:center;
+         align-items:center;min-height:100vh;margin:0}
+    .caja{background:#fff;padding:35px;border-radius:14px;
+          box-shadow:0 4px 14px rgba(0,0,0,.15);width:400px;text-align:center}
+    .logo{width:150px;margin-bottom:12px}
+    h2{color:#1e3a8a;margin:5px 0 8px 0;font-size:22px}
+    .sub{color:#64748b;font-size:14px;margin-bottom:22px}
+    label{display:block;text-align:left;font-weight:bold;color:#334155;
+          margin-top:12px;font-size:14px}
+    input,button{width:100%;padding:13px;margin-top:6px;border-radius:8px;
+                 border:1px solid #ccc;box-sizing:border-box;font-size:16px;
+                 text-align:center;letter-spacing:1px}
+    input:focus{border-color:#1e3a8a;outline:none}
+    button{background:#1e3a8a;color:#fff;border:none;cursor:pointer;
+           margin-top:22px;font-weight:bold;font-size:16px;letter-spacing:.5px}
+    button:hover{background:#1e40af}
+    .error{color:#dc2626;font-size:14px;margin-top:12px;font-weight:bold}
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" class="logo" alt="Logo">
+    <h2>Parte de Bajas</h2>
+    <p class="sub">CEPER Luis Braille</p>
+
+    <form method="POST">
+      <label>Contrasena</label>
+      <input type="password" name="dni" required autofocus autocomplete="off"
+             placeholder="Contrasena">
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% for m in messages %}<p class="error">{{ m }}</p>{% endfor %}
+    {% endwith %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Baja</title>
+  <style>
+    body{font-family:Arial;background:#f0f4f8;display:flex;justify-content:center;
+         align-items:center;min-height:100vh;margin:0;padding:20px}
+    .caja{background:#fff;padding:30px;border-radius:12px;
+          box-shadow:0 4px 12px rgba(0,0,0,.15);width:460px;text-align:center}
+    .logo{width:110px;margin-bottom:10px}
+    h2{color:#1e3a8a;margin:5px 0 5px 0}
+    .quien{color:#475569;font-size:15px;margin-bottom:15px}
+    .fecha{color:#475569;font-size:13px;margin-top:5px;margin-bottom:20px}
+    label{display:block;text-align:left;font-weight:bold;color:#334155;
+          margin-top:14px;font-size:14px}
+    .opcional{color:#94a3b8;font-weight:normal;font-size:12px}
+    input,button{width:100%;padding:11px;margin-top:5px;border-radius:8px;
+                 border:1px solid #ccc;box-sizing:border-box;font-size:15px}
+    input:focus{border-color:#1e3a8a;outline:none}
+    button{background:#16a34a;color:#fff;border:none;cursor:pointer;
+           margin-top:22px;font-weight:bold}
+    button:hover{background:#15803d}
+    .volver{display:inline-block;margin-top:18px;color:#1e3a8a;
+            text-decoration:none;font-weight:bold}
+    .error{color:#dc2626;font-size:14px;margin-top:12px;font-weight:bold}
+    .ayuda{color:#94a3b8;font-size:12px;margin-top:8px;text-align:left}
+  </style>
+</head>
+<body>
+  <div class="caja">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" class="logo" alt="Logo">
+    <h2>Registrar mi baja</h2>
+    <p class="quien">Maestro/a: <b>{{ nombre }}</b></p>
+    <p class="fecha">{{ fecha_hoy }}</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% for m in messages %}<p class="error">{{ m }}</p>{% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <label>Grupos a los que no daras clase hoy</label>
+      <input type="text" name="grupos" required
+             placeholder="Ej: 5A, 5B, 6C" autofocus>
+      <p class="ayuda">Separa los grupos con comas</p>
+
+      <label>Fecha de incorporacion <span class="opcional">(opcional)</span></label>
+      <input type="date" name="fecha_incorp">
+
+      <button type="submit">Guardar baja</button>
+    </form>
+
+    <a class="volver" href="{{ url_for('index') }}">Volver</a>
+  </div>
+</body>
+</html>

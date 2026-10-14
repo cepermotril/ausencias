@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ausencias del profesorado</title>
+  <style>
+    body{font-family:Arial;background:#f0f4f8;padding:25px;margin:0}
+    .container{max-width:1150px;margin:auto;background:#fff;padding:30px;
+               border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+
+    .cabecera{text-align:center;margin-bottom:15px;
+              border-bottom:3px solid #1e3a8a;padding-bottom:20px}
+    .cabecera h1{
+      color:#1e3a8a;font-size:36px;margin:0 0 15px 0;line-height:1.2;
+      text-transform:uppercase;letter-spacing:.6px;
+    }
+    .cabecera img{width:170px;height:auto;display:block;margin:0 auto}
+
+    .fecha{
+      text-align:center;
+      font-size:30px;
+      color:#1e3a8a;
+      margin:15px 0 25px 0;
+      font-weight:bold;
+      letter-spacing:.5px;
+    }
+    .saludo{text-align:right;color:#475569;font-size:15px;margin-bottom:5px}
+
+    table{border-collapse:collapse;width:100%;margin-top:10px;font-size:17px}
+    th,td{border:1px solid #ddd;padding:14px;text-align:left;vertical-align:top}
+    th{background:#1e3a8a;color:#fff;font-size:17px}
+    tr:nth-child(even){background:#f9fafb}
+
+    .grupos{color:#1e3a8a;font-weight:bold}
+    .fecha-incorp{display:block;font-size:14px;color:#64748b;
+                  font-weight:normal;margin-top:6px}
+    .no-indica{color:#dc2626;font-style:italic;font-weight:bold}
+
+    .btn{display:inline-block;padding:11px 18px;background:#1e3a8a;color:#fff;
+         text-decoration:none;border-radius:8px;margin-right:8px;font-weight:bold;
+         border:none;cursor:pointer;font-size:15px}
+    .btn.rojo{background:#dc2626}
+    .btn.verde{background:#16a34a}
+    .btn.mini{padding:7px 12px;font-size:14px}
+    .acciones{text-align:center;margin-bottom:20px}
+    .vacio{text-align:center;font-size:28px;color:#dc2626;font-weight:bold;
+           padding:50px 20px;background:#fef2f2;border-radius:12px;
+           border:3px dashed #dc2626;letter-spacing:1.5px}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="cabecera">
+      <h1>Ausencias del profesorado</h1>
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+    </div>
+
+    <p class="saludo">Conectado como: <b>{{ nombre }}</b></p>
+    <p class="fecha">{{ fecha_hoy }}</p>
+
+    <div class="acciones">
+      {% if rol == 'maestro' %}
+        <a class="btn verde" href="{{ url_for('nueva') }}">Anadir mi baja</a>
+      {% endif %}
+      <a class="btn rojo" href="{{ url_for('logout') }}">Salir</a>
+    </div>
+
+    {% if bajas %}
+    <table>
+      <tr>
+        <th>Maestro/a</th>
+        <th>Grupos a los que no dara clase</th>
+        {% if rol == 'maestro' %}<th>Accion</th>{% endif %}
+      </tr>
+      {% for b in bajas %}
+      <tr>
+        <td>
+          {{ b.nombre }}
+          <span class="fecha-incorp">
+            Fecha de incorporacion:
+            {% if b.fecha_incorp %}
+              {{ b.fecha_incorp }}
+            {% else %}
+              <span class="no-indica">No se indica</span>
+            {% endif %}
+          </span>
+        </td>
+        <td class="grupos">{{ b.grupos }}</td>
+        {% if rol == 'maestro' %}
+        <td>
+          {% if b.user == user %}
+            <form method="POST" action="{{ url_for('borrar', user=b.user) }}"
+                  style="display:inline"
+                  onsubmit="return confirm('Seguro que quieres eliminar tu baja?');">
+              <button class="btn rojo mini" type="submit">Ya me he incorporado</button>
+            </form>
+          {% else %}
+            -
+          {% endif %}
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+      <div class="vacio">NINGUNA BAJA HOY</div>
+    {% endif %}
+  </div>
+</body>
+</html>
