@@ -28,7 +28,7 @@ PROFESORADO = {
     "74687117E": "Romero Lozano, Mario Jesus",
     "74650659L": "Sanchez Vazquez, Fermin",
     "23802110P": "Serrano Alcalde, Jose Luis",
-    "77126105Q": "Tevar Calvente, Leticia",
+    "77136105Q": "Tovar Calvente, Leticia",
 }
 
 DNI_VISITA = "ALUMNADO27"
