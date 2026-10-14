@@ -5,9 +5,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = "clave_secreta_cep_luis_braille_2026"
 
-# ============================================================
-#  PROFESORADO: DNI -> Nombre
-# ============================================================
 PROFESORADO = {
     "75570005D": "Aguilera Garcia, Guillermo Antares",
     "23798721T": "Bejar Pretel, Francisco",
@@ -28,7 +25,7 @@ PROFESORADO = {
     "74687117E": "Romero Lozano, Mario Jesus",
     "74650659L": "Sanchez Vazquez, Fermin",
     "23802110P": "Serrano Alcalde, Jose Luis",
-    "77136105Q": "Tovar Calvente, Leticia",
+    "77126105Q": "Tevar Calvente, Leticia",
 }
 
 DNI_VISITA = "ALUMNADO27"
@@ -95,7 +92,7 @@ def nueva():
 
     if request.method == "POST":
         grupos       = request.form.get("grupos", "").strip()
-        fecha_incorp = request.form.get("fecha_incorp", "").strip()  # opcional
+        fecha_incorp = request.form.get("fecha_incorp", "").strip()
 
         if not grupos:
             flash("Indica al menos un grupo")
