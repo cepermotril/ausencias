@@ -57,7 +57,7 @@ def login():
 
         if dni == DNI_VISITA:
             session["rol"]    = "Visita"
-            session["nombre"] = "Visita"
+            session["nombre"] = "Alumnado"
             session["user"]   = "Visita"
             return redirect(url_for("index"))
 
