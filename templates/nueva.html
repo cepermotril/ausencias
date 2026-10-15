@@ -7,7 +7,7 @@
     body{font-family:Arial;background:#f0f4f8;display:flex;justify-content:center;
          align-items:center;min-height:100vh;margin:0;padding:20px}
     .caja{background:#fff;padding:30px;border-radius:12px;
-          box-shadow:0 4px 12px rgba(0,0,0,.15);width:460px;text-align:center}
+          box-shadow:0 4px 12px rgba(0,0,0,.15);width:480px;text-align:center}
     .logo{width:110px;margin-bottom:10px}
     h2{color:#1e3a8a;margin:5px 0 5px 0}
     .quien{color:#475569;font-size:15px;margin-bottom:15px}
@@ -24,7 +24,9 @@
     .volver{display:inline-block;margin-top:18px;color:#1e3a8a;
             text-decoration:none;font-weight:bold}
     .error{color:#dc2626;font-size:14px;margin-top:12px;font-weight:bold}
-    .ayuda{color:#94a3b8;font-size:12px;margin-top:8px;text-align:left}
+    .ayuda{color:#64748b;font-size:12px;margin-top:8px;text-align:left;
+           font-style:italic}
+    .auto{background:#f0fdf4;border:1px solid #86efac}
   </style>
 </head>
 <body>
@@ -39,10 +41,16 @@
     {% endwith %}
 
     <form method="POST">
-      <label>Grupos a los que no daras clase hoy</label>
-      <input type="text" name="grupos" required
-             placeholder="Ej: 5A, 5B, 6C" autofocus>
-      <p class="ayuda">Separa los grupos con comas</p>
+      <label>Grupos de hoy</label>
+      {% if grupos_hoy %}
+        <input type="text" name="grupos" required
+               value="{{ grupos_hoy }}" class="auto">
+        <p class="ayuda">Grupos rellenados automaticamente segun tu horario. Puedes modificarlos si es necesario.</p>
+      {% else %}
+        <input type="text" name="grupos" required
+               placeholder="Ej: TIC, TAE 1, TAE 2" autofocus>
+        <p class="ayuda">No tienes horario asignado para hoy. Escribe tus grupos manualmente.</p>
+      {% endif %}
 
       <label>Fecha de incorporacion <span class="opcional">(opcional)</span></label>
       <input type="date" name="fecha_incorp">
