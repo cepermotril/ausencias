@@ -28,7 +28,7 @@ PROFESORADO = {
     "77136105Q": "Tovar Calvente, Leticia",
 }
 
-DNI_ALUMNO/A = "ALUMNADO27"
+DNI_VISITA = "ALUMNADO27"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO  = os.path.join(BASE_DIR, "bajas.json")
@@ -56,9 +56,9 @@ def login():
         dni = request.form.get("dni", "").strip().upper()
 
         if dni == DNI_ALUMNO/A:
-            session["rol"]    = "Alumno/a"
-            session["nombre"] = "Alumno/a"
-            session["user"]   = "Alumno/a"
+            session["rol"]    = "Visita"
+            session["nombre"] = "Visita"
+            session["user"]   = "Visita"
             return redirect(url_for("index"))
 
         if dni in PROFESORADO:
