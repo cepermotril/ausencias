@@ -55,7 +55,7 @@ def login():
     if request.method == "POST":
         dni = request.form.get("dni", "").strip().upper()
 
-        if dni == DNI_ALUMNO/A:
+        if dni == DNI_VISITA:
             session["rol"]    = "Visita"
             session["nombre"] = "Visita"
             session["user"]   = "Visita"
