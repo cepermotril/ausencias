@@ -16,3 +16,5 @@ backups/
 leer_pdf.py
 extraccion_pdf.txt
 *.pdf
+
+bajas.json
