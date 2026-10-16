@@ -7,24 +7,24 @@ app.secret_key = "clave_secreta_cep_luis_braille_2026"
 
 PROFESORADO = {
     "75570005D": "Aguilera Garcia, Guillermo Antares",
-    "23798721T": "BÃ©jar Pretel, Francisco",
+    "23798721T": "Béjar Pretel, Francisco",
     "76441734S": "Escudero Casado, Alicia",
-    "76067037B": "FernÃ¡ndez Delgado, Cristina",
-    "74735901T": "Fernandez RodrÃ­guez, Lorena",
-    "74724837E": "Fernandez Ruiz, CÃ¡ndido",
-    "23801814B": "GarcÃ­a Prados, Felicidad",
-    "30255073E": "Hinojosa Ãvila, Antonio Luis",
-    "44253099H": "JimÃ©nez VÃ¡zquez, Vanesa",
-    "77693240E": "MontaÃ±Ã©s Ruiz, Paula",
-    "77128726C": "MuÃ±oz Morillas, Natalia",
-    "74655932W": "Ortega Miranda, MarÃ­a Carmen",
+    "76067037B": "Fernández Delgado, Cristina",
+    "74735901T": "Fernandez Rodríguez, Lorena",
+    "74724837E": "Fernandez Ruiz, Cándido",
+    "23801814B": "García Prados, Felicidad",
+    "30255073E": "Hinojosa Ávila, Antonio Luis",
+    "44253099H": "Jiménez Vázquez, Vanesa",
+    "77693240E": "Montañés Ruiz, Paula",
+    "77128726C": "Muñoz Morillas, Natalia",
+    "74655932W": "Ortega Miranda, María Carmen",
     "24251143N": "Ortiz Marfil, Fernando",
     "71355595G": "Perales Arias, Ana",
-    "33489451W": "Piera Llorens, Eva MarÃ­a",
+    "33489451W": "Piera Llorens, Eva María",
     "23791734M": "Prados Prados, Teresa",
-    "74687117E": "Romero Lozano, Mario JesÃºs",
-    "74650659L": "SÃ¡nchez VÃ¡zquez, FermÃ­n",
-    "23802110P": "Serrano Alcalde, JosÃ© Luis",
+    "74687117E": "Romero Lozano, Mario Jesús",
+    "74650659L": "Sánchez Vázquez, Fermín",
+    "23802110P": "Serrano Alcalde, José Luis",
     "77136105Q": "Tovar Calvente, Leticia",
 }
 
@@ -78,7 +78,7 @@ def baja_activa(b):
     """Devuelve True si la baja sigue activa hoy."""
     fi = b.get("fecha_incorp", "").strip()
     if not fi:
-        return True  # Sin fecha de incorporaciÃ³n = activa indefinidamente
+        return True  # Sin fecha de incorporación = activa indefinidamente
     try:
         fecha_inc = datetime.strptime(fi, "%Y-%m-%d").date()
         return fecha_inc >= datetime.now().date()
@@ -124,10 +124,10 @@ def index():
     # Solo mostramos las que siguen activas
     bajas_activas = [b for b in todas if baja_activa(b)]
 
-    # Quitar duplicados por usuario (nos quedamos con la mÃ¡s reciente)
+    # Quitar duplicados por usuario (nos quedamos con la más reciente)
     vistos = {}
     for b in bajas_activas:
-        vistos[b["user"]] = b  # el Ãºltimo sobreescribe
+        vistos[b["user"]] = b  # el último sobreescribe
     bajas_activas = list(vistos.values())
 
     bajas_activas.sort(key=lambda b: b["nombre"])
