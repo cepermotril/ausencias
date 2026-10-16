@@ -7,24 +7,24 @@ app.secret_key = "clave_secreta_cep_luis_braille_2026"
 
 PROFESORADO = {
     "75570005D": "Aguilera Garcia, Guillermo Antares",
-    "23798721T": "Béjar Pretel, Francisco",
+    "23798721T": "BÃ©jar Pretel, Francisco",
     "76441734S": "Escudero Casado, Alicia",
-    "76067037B": "Fernández Delgado, Cristina",
-    "74735901T": "Fernandez Rodríguez, Lorena",
-    "74724837E": "Fernandez Ruiz, Cándido",
-    "23801814B": "García Prados, Felicidad",
-    "30255073E": "Hinojosa Ávila, Antonio Luis",
-    "44253099H": "Jiménez Vázquez, Vanesa",
-    "77693240E": "Montañés Ruiz, Paula",
-    "77128726C": "Muñoz Morillas, Natalia",
-    "74655932W": "Ortega Miranda, María Carmen",
+    "76067037B": "FernÃ¡ndez Delgado, Cristina",
+    "74735901T": "Fernandez RodrÃ­guez, Lorena",
+    "74724837E": "Fernandez Ruiz, CÃ¡ndido",
+    "23801814B": "GarcÃ­a Prados, Felicidad",
+    "30255073E": "Hinojosa Ãvila, Antonio Luis",
+    "44253099H": "JimÃ©nez VÃ¡zquez, Vanesa",
+    "77693240E": "MontaÃ±Ã©s Ruiz, Paula",
+    "77128726C": "MuÃ±oz Morillas, Natalia",
+    "74655932W": "Ortega Miranda, MarÃ­a Carmen",
     "24251143N": "Ortiz Marfil, Fernando",
     "71355595G": "Perales Arias, Ana",
-    "33489451W": "Piera Llorens, Eva María",
+    "33489451W": "Piera Llorens, Eva MarÃ­a",
     "23791734M": "Prados Prados, Teresa",
-    "74687117E": "Romero Lozano, Mario Jesús",
-    "74650659L": "Sánchez Vázquez, Fermín",
-    "23802110P": "Serrano Alcalde, José Luis",
+    "74687117E": "Romero Lozano, Mario JesÃºs",
+    "74650659L": "SÃ¡nchez VÃ¡zquez, FermÃ­n",
+    "23802110P": "Serrano Alcalde, JosÃ© Luis",
     "77136105Q": "Tovar Calvente, Leticia",
 }
 
@@ -34,28 +34,30 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARCHIVO  = os.path.join(BASE_DIR, "bajas.json")
 HORARIOS = os.path.join(BASE_DIR, "horarios.json")
 
+
 # ============================================================
 #  UTILIDADES
 # ============================================================
 def cargar_bajas():
     if not os.path.exists(ARCHIVO):
         return []
-    with open(ARCHIVO, "r", encoding="utf-8") as f:
+    with open(ARCHIVO, "r", encoding="utf-8-sig") as f:
         return json.load(f)
+
 
 def guardar_bajas(bajas):
     with open(ARCHIVO, "w", encoding="utf-8") as f:
         json.dump(bajas, f, ensure_ascii=False, indent=2)
 
+
 def cargar_horarios():
-    """Lee el archivo horarios.json"""
     if not os.path.exists(HORARIOS):
         return {}
-    with open(HORARIOS, "r", encoding="utf-8") as f:
+    with open(HORARIOS, "r", encoding="utf-8-sig") as f:
         return json.load(f)
 
+
 def grupos_de_hoy(dni):
-    """Devuelve los grupos del maestro segun el dia de la semana actual."""
     horarios = cargar_horarios()
     if dni not in horarios:
         return ""
@@ -63,12 +65,26 @@ def grupos_de_hoy(dni):
     hoy = dias[datetime.now().weekday()]
     return horarios[dni].get(hoy, "")
 
+
 def fecha_bonita():
     dias  = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
     meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
              "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
     hoy = datetime.now()
     return f"{dias[hoy.weekday()]}, {hoy.day} de {meses[hoy.month-1]} de {hoy.year}"
+
+
+def baja_activa(b):
+    """Devuelve True si la baja sigue activa hoy."""
+    fi = b.get("fecha_incorp", "").strip()
+    if not fi:
+        return True  # Sin fecha de incorporaciÃ³n = activa indefinidamente
+    try:
+        fecha_inc = datetime.strptime(fi, "%Y-%m-%d").date()
+        return fecha_inc >= datetime.now().date()
+    except ValueError:
+        return True  # Formato raro â†’ mostramos por seguridad
+
 
 # ============================================================
 #  LOGIN
@@ -94,22 +110,35 @@ def login():
 
     return render_template("login.html")
 
+
 # ============================================================
-#  LISTA DE BAJAS
+#  LISTA DE BAJAS ACTIVAS
 # ============================================================
 @app.route("/bajas")
 def index():
     if "rol" not in session:
         return redirect(url_for("login"))
 
-    hoy_str = datetime.now().strftime("%d/%m/%Y")
     todas = cargar_bajas()
-    bajas_hoy = [b for b in todas if b["fecha_registro"] == hoy_str]
-    bajas_hoy.sort(key=lambda b: b["nombre"])
 
-    return render_template("index.html", bajas=bajas_hoy, rol=session["rol"],
-                           nombre=session.get("nombre"), user=session.get("user"),
+    # Solo mostramos las que siguen activas
+    bajas_activas = [b for b in todas if baja_activa(b)]
+
+    # Quitar duplicados por usuario (nos quedamos con la mÃ¡s reciente)
+    vistos = {}
+    for b in bajas_activas:
+        vistos[b["user"]] = b  # el Ãºltimo sobreescribe
+    bajas_activas = list(vistos.values())
+
+    bajas_activas.sort(key=lambda b: b["nombre"])
+
+    return render_template("index.html",
+                           bajas=bajas_activas,
+                           rol=session["rol"],
+                           nombre=session.get("nombre"),
+                           user=session.get("user"),
                            fecha_hoy=fecha_bonita())
+
 
 # ============================================================
 #  NUEVA BAJA
@@ -127,14 +156,13 @@ def nueva():
             flash("Indica al menos un grupo")
             return redirect(url_for("nueva"))
 
-        hoy_str = datetime.now().strftime("%d/%m/%Y")
-
         bajas = cargar_bajas()
-        bajas = [b for b in bajas if not (b["fecha_registro"] == hoy_str
-                                          and b["user"] == session["user"])]
+
+        # Eliminar cualquier baja previa del mismo maestro
+        bajas = [b for b in bajas if b["user"] != session["user"]]
 
         bajas.append({
-            "fecha_registro": hoy_str,
+            "fecha_registro": datetime.now().strftime("%d/%m/%Y"),
             "user":           session["user"],
             "nombre":         session["nombre"],
             "grupos":         grupos,
@@ -143,12 +171,12 @@ def nueva():
         guardar_bajas(bajas)
         return redirect(url_for("index"))
 
-    # GET: mostrar formulario con grupos auto-rellenados
     grupos_hoy = grupos_de_hoy(session["user"])
     return render_template("nueva.html",
                            nombre=session["nombre"],
                            fecha_hoy=fecha_bonita(),
                            grupos_hoy=grupos_hoy)
+
 
 # ============================================================
 #  BORRAR BAJA (ya me he incorporado)
@@ -158,11 +186,12 @@ def borrar(user):
     if session.get("rol") != "maestro" or user != session["user"]:
         return redirect(url_for("login"))
 
-    hoy_str = datetime.now().strftime("%d/%m/%Y")
     bajas = cargar_bajas()
-    bajas = [b for b in bajas if not (b["fecha_registro"] == hoy_str and b["user"] == user)]
+    # Borrar TODAS las bajas del maestro (se ha incorporado)
+    bajas = [b for b in bajas if b["user"] != user]
     guardar_bajas(bajas)
     return redirect(url_for("index"))
+
 
 # ============================================================
 #  LOGOUT
@@ -171,6 +200,7 @@ def borrar(user):
 def logout():
     session.clear()
     return redirect(url_for("login"))
+
 
 # ============================================================
 #  ARRANQUE

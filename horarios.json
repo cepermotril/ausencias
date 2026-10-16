@@ -1,162 +1,162 @@
 {
   "75570005D": {
     "nombre": "Aguilera Garcia, Guillermo Antares",
-    "lunes":     "TAE 2, TAE 1, TIC 2 L, INT I",
-    "martes":    "TAE 1, TAE 2, PAT M18, TIC 2 M",
-    "miercoles": "TIC TAE 2, TIC TAE 1, TIC 3 X, INT I",
-    "jueves":    "PAT J16, TAE 2, TAE 1",
-    "viernes":   "HS II"
+    "lunes": "TAE 2, TAE 1, Informática 2 L, Español para Extranjeros I",
+    "martes": "TAE 1, TAE 2, Patrimonio M18, Informática 2 M",
+    "miercoles": "TIC TAE 2, TIC TAE 1, Informática 3 X, Español para Extranjeros I",
+    "jueves": "Patrimonio J16, TAE 2, TAE 1",
+    "viernes": "Hábitos Sanos II"
   },
   "23798721T": {
     "nombre": "Bejar Pretel, Francisco",
-    "lunes":     "PL SOCIAL, TOR PL SOCIAL, TIC 2 J, CAL PL SOCIAL",
-    "martes":    "PCAMA B, TIC 2 J",
+    "lunes": "Prueba Libre SOCIAL, Torrenueva PL SOCIAL, Informática 2 J, Calahonda PL SOCIAL",
+    "martes": "PCAMA B, Informática 2 J",
     "miercoles": "PCAMA B",
-    "jueves":    "TIC 3 J, TIC 2 J, PCAMA B, TIC M J",
-    "viernes":   "PL SOCIAL"
+    "jueves": "Informática 3 J, Informática 2 J, PCAMA B, Informática M J",
+    "viernes": "Prueba Libre SOCIAL"
   },
   "76441734S": {
     "nombre": "Escudero Casado, Alicia",
-    "lunes":     "TOR PL LENGUA, CAL HS I, CAL PL LENGUA",
-    "martes":    "TOR INT, TOR PL C-T",
-    "miercoles": "CAL HS I, CAL PL LENGUA",
-    "jueves":    "PAT J9, PAT J11:30",
-    "viernes":   "TOR INT, TOR PL C-T"
+    "lunes": "Torrenueva PL LENGUA, Calahonda HS I, Calahonda PL LENGUA",
+    "martes": "Torrenueva INT, Torrenueva PL C-T",
+    "miercoles": "Calahonda HS I, Calahonda PL LENGUA",
+    "jueves": "Patrimonio J9, Patrimonio J11:30",
+    "viernes": "Torrenueva INT, Torrenueva PL C-T"
   },
   "76067037B": {
     "nombre": "Fernandez Delgado, Cristina",
-    "lunes":     "HS II, ZAF PCAMA",
-    "martes":    "ZAF PCAMA, INTER 0, INTER 1",
-    "miercoles": "ZAF PCAMA, INTER 0, INTER 1",
-    "jueves":    "ZAF PCAMA, INTER 0, INTER 1",
-    "viernes":   "EOI PAT V"
+    "lunes": "Hábitos Sanos II, Zafra PCAMA",
+    "martes": "Zafra PCAMA, Español para Extranjeros 0, Español para Extranjeros 1",
+    "miercoles": "Zafra PCAMA, Español para Extranjeros 0, Español para Extranjeros 1",
+    "jueves": "Zafra PCAMA, Español para Extranjeros 0, Español para Extranjeros 1",
+    "viernes": "Escuela Idiomas Patrimonio V"
   },
   "74735901T": {
     "nombre": "Fernandez Rodriguez, Lorena",
-    "lunes":     "VC ING IV, VC ING CONV, VC ING V",
-    "martes":    "ING CONV, PAT ING LJ, ING III MV",
-    "miercoles": "VC ING IV, VC ING CONV, VC ING LX",
-    "jueves":    "PAT ING LJ, TOR PL INGLES, ING III MV",
-    "viernes":   "ING CONV"
+    "lunes": "Virgen de la Cabeza ING IV, Virgen de la Cabeza ING CONV, Virgen de la Cabeza ING V",
+    "martes": "Inglés CONV, Patrimonio ING LJ, Inglés III MV",
+    "miercoles": "Virgen de la Cabeza ING IV, Virgen de la Cabeza ING CONV, Virgen de la Cabeza ING LX",
+    "jueves": "Patrimonio ING LJ, Torrenueva PL INGLES, Inglés III MV",
+    "viernes": "Inglés CONV"
   },
   "74724837E": {
     "nombre": "Fernandez Ruiz, Candido",
-    "lunes":     "TIC, TAE 2, TAE 1, COOR. SALUD",
-    "martes":    "PL, TAE 1, TAE 2, TIC TAE 1",
-    "miercoles": "PL",
-    "jueves":    "PL, TAE 2, TAE 1, TIC TAE 2",
-    "viernes":   "PL, TAE 1, TAE 2"
+    "lunes": "Informática, TAE 2, TAE 1, COOR. SALUD",
+    "martes": "Prueba Libre, TAE 1, TAE 2, TIC TAE 1",
+    "miercoles": "Prueba Libre",
+    "jueves": "Prueba Libre, TAE 2, TAE 1, TIC TAE 2",
+    "viernes": "Prueba Libre, TAE 1, TAE 2"
   },
   "23801814B": {
     "nombre": "Garcia Prados, Felicidad Angeles",
-    "lunes":     "INT II LX, PCAMA A",
-    "martes":    "INT II MJV, INT III MJV, INT IV MJV, PCAMA A",
-    "miercoles": "INT II LX, PCAMA A",
-    "jueves":    "INT III MJV, INT IV MJV, INT II MJV",
-    "viernes":   "INT IV MJV, INT II MJV, INT III MJV"
+    "lunes": "Español para Extranjeros II LX, PCAMA A",
+    "martes": "Español para Extranjeros II MJV, Español para Extranjeros III MJV, Español para Extranjeros IV MJV, PCAMA A",
+    "miercoles": "Español para Extranjeros II LX, PCAMA A",
+    "jueves": "Español para Extranjeros III MJV, Español para Extranjeros IV MJV, Español para Extranjeros II MJV",
+    "viernes": "Español para Extranjeros IV MJV, Español para Extranjeros II MJV, Español para Extranjeros III MJV"
   },
   "30255073E": {
     "nombre": "Hinojosa Avila, Antonio Luis",
-    "lunes":     "VC ING IV, VC ING CONV, VC ING V",
-    "martes":    "ING CONV, PAT ING LJ, ING III MV",
-    "miercoles": "VC ING IV, VC ING CONV, VC ING LX",
-    "jueves":    "PAT ING LJ, TOR PL INGLES, ING III MV",
-    "viernes":   "ING CONV"
+    "lunes": "Virgen de la Cabeza ING IV, Virgen de la Cabeza ING CONV, Virgen de la Cabeza ING V",
+    "martes": "Inglés CONV, Patrimonio ING LJ, Inglés III MV",
+    "miercoles": "Virgen de la Cabeza ING IV, Virgen de la Cabeza ING CONV, Virgen de la Cabeza ING LX",
+    "jueves": "Patrimonio ING LJ, Torrenueva PL INGLES, Inglés III MV",
+    "viernes": "Inglés CONV"
   },
   "44253099H": {
     "nombre": "Jimenez Vazquez, Vanesa",
-    "lunes":     "TAE 2, TAE 1, GS MATE, TIC TAE 1",
-    "martes":    "TAE 1, TAE 2, CL, TIC TAE 2",
-    "miercoles": "TAE 2, TAE 1, GS MATE, PAU B",
-    "jueves":    "TAE 1, GS MATE",
-    "viernes":   "TAE 2, TAE 1"
+    "lunes": "TAE 2, TAE 1, Grado Superior MATE, TIC TAE 1",
+    "martes": "TAE 1, TAE 2, Club de Lectura, TIC TAE 2",
+    "miercoles": "TAE 2, TAE 1, Grado Superior MATE, Acceso Universidad B",
+    "jueves": "TAE 1, Grado Superior MATE",
+    "viernes": "TAE 2, TAE 1"
   },
   "77693240E": {
     "nombre": "Montanes Ruiz, Paula",
-    "lunes":     "HS II LX, INT 0 LX",
-    "martes":    "TIC 2 M, CFGS DIGI",
-    "miercoles": "HS II LX, INT 0 LX",
-    "jueves":    "VAR PL LENGUA, TIC 2 J",
-    "viernes":   "AUX PSICO, INT MV"
+    "lunes": "Hábitos Sanos II LX, Español para Extranjeros 0 LX",
+    "martes": "Informática 2 M, Grado Superior DIGI",
+    "miercoles": "Hábitos Sanos II LX, Español para Extranjeros 0 LX",
+    "jueves": "Varadero PL LENGUA, Informática 2 J",
+    "viernes": "Auxiliar Enfermería PSICO, Español para Extranjeros MV"
   },
   "77128726C": {
     "nombre": "Munoz Morillas, Natalia",
-    "lunes":     "PAT L16, PCAMA C",
-    "martes":    "PAT M, PAT M11:30",
-    "miercoles": "ING I XJ16, PCAMA C",
-    "jueves":    "ING I XJ16, PCAMA C",
-    "viernes":   "TIC 3 V, CFGS LENG"
+    "lunes": "Patrimonio L16, PCAMA C",
+    "martes": "Patrimonio M, Patrimonio M11:30",
+    "miercoles": "Inglés I XJ16, PCAMA C",
+    "jueves": "Inglés I XJ16, PCAMA C",
+    "viernes": "Informática 3 V, Grado Superior LENG"
   },
   "74655932W": {
     "nombre": "Ortega Miranda, Maria Carmen",
-    "lunes":     "ING II LV11, VC ING III, VC ING II LX, VC ING",
-    "martes":    "CAL ING II, PAT ING M18",
-    "miercoles": "VC ING III, VC ING II LX, VC ING",
-    "jueves":    "CAL ING II, CAL PL ING",
-    "viernes":   "ING II"
+    "lunes": "Inglés II LV11, Virgen de la Cabeza ING III, Virgen de la Cabeza ING II LX, Virgen de la Cabeza ING",
+    "martes": "Calahonda ING II, Patrimonio ING M18",
+    "miercoles": "Virgen de la Cabeza ING III, Virgen de la Cabeza ING II LX, Virgen de la Cabeza ING",
+    "jueves": "Calahonda ING II, Calahonda PL ING",
+    "viernes": "Inglés II"
   },
   "24251143N": {
     "nombre": "Ortiz Marfil, Fernando",
-    "lunes":     "CAR HS I, CAR INTER, VAR INTER",
-    "martes":    "CAL/CAR INTER, CAL TIC",
-    "miercoles": "CAR HS I, CAR INTER, VAR INTER",
-    "jueves":    "MAYORES 55, EC",
-    "viernes":   "CAL/CAR INTER, CAL PAT"
+    "lunes": "Carchuna HS I, Carchuna INTER, Varadero INTER",
+    "martes": "CAL/CAR INTER, Calahonda TIC",
+    "miercoles": "Carchuna HS I, Carchuna INTER, Varadero INTER",
+    "jueves": "Escritura Creativa",
+    "viernes": "CAL/CAR INTER, Calahonda PAT"
   },
   "71355595G": {
     "nombre": "Perales Arias, Ana",
-    "lunes":     "PCAMA D, TAE 1, TAE 2",
-    "martes":    "PCAMA D, TAE 1, TAE 2",
+    "lunes": "PCAMA D, TAE 1, TAE 2",
+    "martes": "PCAMA D, TAE 1, TAE 2",
     "miercoles": "PCAMA D, TAE 1, TAE 2, COORD. IGUALDAD",
-    "jueves":    "TIC TAE 1, TIC TAE 2, PAU LENGUA",
-    "viernes":   "TIC, AUX RELACIONES, AUX HIGIENE, AUX FOL"
+    "jueves": "TIC TAE 1, TIC TAE 2, Acceso Universidad LENGUA",
+    "viernes": "Informática, Auxiliar Enfermería RELACIONES, Auxiliar Enfermería HIGIENE, Auxiliar Enfermería FOL"
   },
   "33489451W": {
     "nombre": "Piera Llorens, Eva Maria",
-    "lunes":     "PAU INGLES, TAE 2, TAE 1",
-    "martes":    "ING I MJV, ING V",
+    "lunes": "Acceso Universidad INGLES, TAE 2, TAE 1",
+    "martes": "Inglés I MJV, Inglés V",
     "miercoles": "TIC TAE 1, TIC TAE 2, TAE 1, TAE 2",
-    "jueves":    "CFGS, ING I MJV, ING V",
-    "viernes":   "CFGS, ING VI, ING I MJV"
+    "jueves": "Grado Superior, Inglés I MJV, Inglés V",
+    "viernes": "Grado Superior, Inglés VI, Inglés I MJV"
   },
   "23791734M": {
     "nombre": "Prados Prados, Teresa",
-    "lunes":     "INTER 0 LV, AUX SSA, AUX DOC, CFGS ECO",
-    "martes":    "PL C-T, VAR PL C-T, PAU MATE",
-    "miercoles": "MAYORES 55, PAU MATE",
-    "jueves":    "INTER 1 JV, PL C-T, CFGS ECO",
-    "viernes":   "INT 0, INTER 1 JV, PL C-T"
+    "lunes": "Español para Extranjeros 0 LV, Auxiliar Enfermería SSA, Auxiliar Enfermería DOC, Grado Superior ECO",
+    "martes": "Prueba Libre C-T, Varadero PL C-T, Acceso Universidad MATE",
+    "miercoles": "Acceso Universidad MATE",
+    "jueves": "Español para Extranjeros 1 JV, Prueba Libre C-T, Grado Superior ECO",
+    "viernes": "Español para Extranjeros 0, Español para Extranjeros 1 JV, Prueba Libre C-T"
   },
   "74687117E": {
     "nombre": "Romero Lozano, Mario Jesus",
-    "lunes":     "TOR HS I, INT 1 LMX T, TIC 1 L",
-    "martes":    "INT 1 LMX T, TAE 2, TAE 1",
-    "miercoles": "TOR HS I, INT 1 LMX T, TAE 2",
-    "jueves":    "TIC TAE 2, TIC TAE 1, TAE 1, TAE 2",
-    "viernes":   "AUX ODO, TIC 2 V, TIC 1 V"
+    "lunes": "Torrenueva HS I, Español para Extranjeros 1 LMX T, Informática 1 L",
+    "martes": "Español para Extranjeros 1 LMX T, TAE 2, TAE 1",
+    "miercoles": "Torrenueva HS I, Español para Extranjeros 1 LMX T, TAE 2",
+    "jueves": "TIC TAE 2, TIC TAE 1, TAE 1, TAE 2",
+    "viernes": "Auxiliar Enfermería ODO, Informática 2 V, Informática 1 V"
   },
   "74650659L": {
     "nombre": "Sanchez Vazquez, Fermin",
-    "lunes":     "TAE 2, PL, TIC TAE 2",
-    "martes":    "TAE 2, TAE 1, PL",
-    "miercoles": "VAR PL INGLES",
-    "jueves":    "TAE 2",
-    "viernes":   "TAE 1, TIC TAE 1"
+    "lunes": "TAE 2, Prueba Libre, TIC TAE 2",
+    "martes": "TAE 2, TAE 1, Prueba Libre",
+    "miercoles": "Varadero PL INGLES",
+    "jueves": "TAE 2",
+    "viernes": "TAE 1, TIC TAE 1"
   },
   "23802110P": {
     "nombre": "Serrano Alcalde, Jose Luis",
-    "lunes":     "FR LX16, PAU G",
-    "martes":    "HS II MJ, FR I MJ12:30",
-    "miercoles": "FR LX16",
-    "jueves":    "HS II MJ, FR I MJ12:30, VAR PL SOCIAL",
-    "viernes":   "PAT CORO"
+    "lunes": "Francés LX16, Acceso Universidad G",
+    "martes": "Hábitos Sanos II MJ, Francés I MJ12:30",
+    "miercoles": "Francés LX16",
+    "jueves": "Hábitos Sanos II MJ, Francés I MJ12:30, Varadero PL SOCIAL",
+    "viernes": "Patrimonio CORO"
   },
   "77136105Q": {
     "nombre": "Tovar Calvente, Leticia",
-    "lunes":     "FR II LJ9, TAE 1, TAE 2, AUX",
-    "martes":    "FR III MV9, TAE 2, TAE 1, AUX",
-    "miercoles": "CL, PAU H",
-    "jueves":    "FR II LJ9, TAE 1, TAE 2, TIC TAE 1",
-    "viernes":   "FR III MV9, TAE 2, TAE 1, TIC TAE 2"
+    "lunes": "Francés II LJ9, TAE 1, TAE 2, Auxiliar Enfermería",
+    "martes": "Francés III MV9, TAE 2, TAE 1, Auxiliar Enfermería",
+    "miercoles": "Club de Lectura, Acceso Universidad H",
+    "jueves": "Francés II LJ9, TAE 1, TAE 2, TIC TAE 1",
+    "viernes": "Francés III MV9, TAE 2, TAE 1, TIC TAE 2"
   }
 }
